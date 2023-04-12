@@ -1,0 +1,336 @@
+@charset "uth-8";
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('font/NotoSansKR-Light-Alphabetic.woff2') format('woff2'),
+        url('font/NotoSansKR-Light-Alphabetic.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('font/NotoSansKR-Bold-Alphabetic.woff2') format('woff2'),
+        url('font/NotoSansKR-Bold-Alphabetic.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('font/NotoSansKR-Black-Alphabetic.woff2') format('woff2'),
+        url('font/NotoSansKR-Black-Alphabetic.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('font/NotoSansKR-Medium-Alphabetic.woff2') format('woff2'),
+        url('font/NotoSansKR-Medium-Alphabetic.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('font/NotoSansKR-Thin-Alphabetic.woff2') format('woff2'),
+        url('font/NotoSansKR-Thin-Alphabetic.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'NotoSansKR';
+    src: url('font/NotoSansKR-Regular-Alphabetic.woff2') format('woff2'),
+        url('font/NotoSansKR-Regular-Alphabetic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+body {
+    color: #333;
+    line-height: 1;
+    font-family: 'NotoSansKR';
+    max-width: 520px;
+    margin: 0 auto; 
+    position: relative;
+    /* 로고, 아이콘 사라짐 */
+}
+/* 메뉴아이콘 클릭 시 나타남 */
+/* body 태그에 클래스명 만들었다가 다시 지움 */
+body.body_bg::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #0000006f;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+.inner {
+    max-width: 100%;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+/******** 🤍.header ********/
+header {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+header .inner {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner h1 {
+    height: 25px;
+}
+
+header .inner nav {
+    width: 300px;
+    height: 100vh;
+    background-color: #dddddd;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: none;
+    overflow: auto; /* 스크롤바 생성 */
+}
+/* 스크롤바 스타일 없애기 */
+header .inner nav::-webkit-scrollbar {
+    display: none;
+}
+header .inner nav .menu_close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+header .inner nav > ul {
+    padding: 0 20px;
+    margin-top: 130px;
+    font-size: 18px;
+}
+header .inner nav > ul .depth01 {
+    border-bottom: 1px solid #838383;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+header .inner nav > ul .depth01 .depth02 li {
+    font-size: 16px;
+    margin-top: 15px;
+    color: #838383;
+}
+
+/******** 🤍.main_visual ********/
+.main_visual {
+    height: 750px;
+}
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
+.main_visual div {
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    
+}
+.main_visual div h2 {
+    font-size: 35px;
+    line-height: 1.3;
+}
+.main_visual div a {
+    width: 170px;
+    height: 45px;
+    border: 1px solid #333;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 45px;
+    display: block;
+    margin: 30px auto;
+}
+
+/******** 🤍best sellers *********/
+.best {
+    margin: 60px 0;
+}
+.best h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.best .best_menu li{
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+.best .best_menu li.on {
+    color: #BB181D;
+}
+.best .list {
+    /* display: flex; */
+    justify-content: space-between;
+    display: none;
+}
+
+.best .list.on {
+    display: flex;
+}
+
+.best .list .item {
+    width: calc(100% / 2 - 5px);
+}
+
+.best .list .item figure {
+    width: 100%;
+    height: 200px;
+}
+.best .list .item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.best .list .item .text h4 {
+    margin: 10px 0 20px;
+}
+
+.best .list .item .text div p {
+    color: #838383;
+    text-decoration: line-through;
+    margin-bottom: 5px;
+}
+.best .list .item .text div ul {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+.best .list .item .text div ul li:last-child {
+    color: #BB181D;
+}
+.best .inner > a {
+    width: 100%;
+    height: 35px;
+    border: 1px solid #333;
+    border-radius: 40px;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    line-height: 35px;
+    margin-top: 30px;
+}
+
+/******** 🤍event ********/
+.event {
+    margin: 60px 0;
+}
+.event .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.event .title h3 {
+    font-size: 30px;
+}
+.event .title a {
+    position: relative;
+    padding-right: 15px;
+}
+.event .title a::before {
+    content: '';
+    width: 8px;
+    height: 12px;
+    background-image: url(../img/arrow_right22.png);
+    background-size: 100% 100%;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.event .item {
+    display: none;
+    
+}
+.event .item.on {
+    display: block;
+}
+.event .item a figure {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    
+}
+.event .item a figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.event .item a div h4 {
+    font-size: 18px;
+    margin: 10px 0 15px;
+}
+.event .item a div p {
+    line-height: 1.3;
+    margin-bottom: 30px;
+}
+.event .item a div span {
+    font-size: 14px;
+    color: #838383;
+    /* display: block; */
+}
+.event .btn {
+    text-align: center;
+    margin-top: 20px;
+
+}
+.event .btn button {
+    width: 35px;
+    height: 35px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #BB181D;
+    color: #fff;
+    font-weight: bold;
+}
+    
+
+/******** 🤍footer ********/
+footer {
+    background-color: #BB181D;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px 0;
+    line-height: 1.3; 
+}
